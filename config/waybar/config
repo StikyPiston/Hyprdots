@@ -13,7 +13,7 @@
     //***************************
 
     "hyprland/workspaces": {
-        "disable-scroll": true,
+        "disable-scroll": false,
     },
 
     "hyprland/language": {

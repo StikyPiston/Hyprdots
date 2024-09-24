@@ -1,6 +1,6 @@
 {
     "layer": "top", // Waybar at top layer
-    "position": "top", // Waybar position (top|bottom|left|right)
+    "position": "bottom", // Waybar position (top|bottom|left|right)
     "margin": "9 13 -10 18",
     // Choose the order of the modules
     "modules-left": ["hyprland/workspaces", "hyprland/language", "keyboard-state", "hyprland/submap"],
@@ -16,13 +16,6 @@
         "disable-scroll": false,
     },
 
-    "hyprland/language": {
-        "format-en": "US",
-        "format-ru": "RU",
-	"min-length": 5,
-	"tooltip": false
-    },
-
     "keyboard-state": {
         //"numlock": true,
         "capslock": true,
@@ -33,25 +26,6 @@
         },
     },
 
-    "custom/pacman": {
-        "format": "{} ",
-        "interval": 3600,                     			// every hour
-        "exec": "(checkupdates;pacman -Qm | aur vercmp) | wc -l",	// # of updates
-        "exec-if": "exit 0",                  			// always run; consider advanced run conditions
-        "on-click": "foot sh -c 'yay; echo Done - Press enter to exit; read'; pkill -SIGRTMIN+8 waybar", // update system
-        "signal": 8,
-        "tooltip": false,
-    },
-
-    "custom/mail": {
-        "format": "{} ",
-        "exec": "$HOME/.config/waybar/scripts/checkgmail.py",
-        "interval": 120,
-        "on-click": "google-chrome-stable https://mail.google.com/mail/u/0/#inbox ; pkill -SIGRTMIN+9 waybar",
-        "signal": 9,
-        "tooltip": false,
-    },
-
     "hyprland/submap": {
         "format": "pon {}"
     },
@@ -60,14 +34,6 @@
         // "timezone": "America/New_York",
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
         "format": "{:%a, %d %b, %I:%M %p}"
-    },
-
-    "custom/weather": {
-        "format": "{}",
-        "tooltip": true,
-        "interval": 1800,
-        "exec": "$HOME/.config/waybar/scripts/wttr.py",
-        "return-type": "json"
     },
 
     "pulseaudio": {
@@ -113,13 +79,6 @@
         "format": "{temperatureC}°C {icon}",
         "format-icons": ["", "", "", "", ""],
         "tooltip": false,
-    },
-
-    "backlight": {
-        "device": "intel_backlight",
-        "format": "{percent}% {icon}",
-        "format-icons": [""],
-        "min-length": 7,
     },
 
     "battery": {
